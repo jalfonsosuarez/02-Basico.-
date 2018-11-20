@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { WebsocketService } from './services/websocket.service';
 
 @Component({
@@ -12,11 +12,6 @@ export class AppComponent {
     public wsService: WebsocketService
   ) {
 
-  }
-
-
-  ngOnInit() {
-    
   }
 
 }
