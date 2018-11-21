@@ -22,6 +22,7 @@ export class WebsocketService {
     this.socket.on( 'connect', () => {
       console.log('Conectado al servidor socket.');
       this.socketStatus = true;
+      this.getStorage();
     });
 
     this.socket.on( 'disconnect', () => {
@@ -59,6 +60,12 @@ export class WebsocketService {
 
     });
 
+  }
+
+  logoutWS() {
+    this.usuario = null;
+    localStorage.removeItem( 'usuario' );
+    this.emit( 'configurar-usuario', { nombre: 'sin-nombre' }, () => {} );
   }
 
   getUsuario() {
